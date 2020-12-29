@@ -1,0 +1,51 @@
+// main:_preprocessor.less
+.fz(@fz){
+	font-size: @fz/1600px*100vw;
+}
+.pos-a(@top:0,@left:0){
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.pos-r(@top:0,@left:0){
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+@grid:1600px;
+@grid-1:1279px;
+@grid-2:1000px;
+@grid-3:768px;
+@grid-4:480px;
+
+
+
+	
+.conteiner(){
+	.conteiner{
+		max-width: @grid;
+		margin:0 auto;
+		padding: 0 15px;
+		border: 4px solid rgb(69, 2, 255);
+	}
+	@media screen and (max-width:1600px) {
+		.conteiner{
+			max-width: @grid-1;
+		}
+	}
+	@media screen and (max-width:1279px) {
+		.conteiner{
+			max-width: @grid-2;
+		}
+	}
+	@media screen and (max-width:999px) {
+		.conteiner{
+			max-width: @grid-3;
+		}
+	}
+	@media screen and (max-width:767px) {
+		.conteiner{
+			max-width: @grid-4;
+		}
+	}
+}
