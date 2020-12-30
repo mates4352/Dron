@@ -2,25 +2,29 @@
 .fz(@fz){
 	font-size: @fz/1600px*100vw;
 }
-.pos-a(@top:0,@left:0){
-	position: absolute;
-	top: 0;
-	left: 0;
+.wh(@w,@h){
+	width: @w;
+	height: @h;
 }
-.pos-r(@top:0,@left:0){
-	position: absolute;
-	top: 0;
-	left: 0;
+
+
+.pos-r(@value-1:0 ,@value-2:0){
+	position: relative;
+	top: @value-1;
+	right: @value-2;
+  }
+
+.pos-a(@value-1:0 ,@value-2:0){
+ position: absolute;
+ top: @value-1;
+ right: @value-2;
 }
+
 @grid:1600px;
-@grid-1:1279px;
+@grid-1:1280px;
 @grid-2:1000px;
 @grid-3:768px;
 @grid-4:480px;
-
-
-
-	
 .conteiner(){
 	.conteiner{
 		max-width: @grid;

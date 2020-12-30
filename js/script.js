@@ -22,15 +22,15 @@ let preloader = document.querySelector('.preloader').onclick = function () {
 }
 
 
-// function getClass(bth) {
-// 	bth.onclick = function () {
-// 		this.classList.toggle("active")
-// 	}
+function getClass(bth) {
+	bth.onclick = function () {
+		this.classList.toggle("active")
+	}
 
-// }
-// getClass(
-// 	document.querySelector('.header__burger')
-// );
+}
+getClass(
+	document.querySelector('.header__burger')
+);
 
 
 // $(document).ready(function () {
