@@ -1,1 +1,76 @@
-// main:../content.less
+// main:../_content.less
+.vision {
+	display: grid;
+	grid-template-columns: 1fr 1.25fr;
+}
+
+.vision__image {
+	object-fit: cover;
+	object-position: center;
+}
+
+.vision__image img {
+	.wh(100%, 100%);
+	object-fit: cover;
+	object-position: center;
+}
+
+.vision__col {
+	&:extend(.pos-rel);
+	background-color: @vision-color-bg;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+
+
+}
+
+.vision__col::before {
+	content: "";
+	.pos-a(50%, 0%);
+	.wh(25%, 80%);
+
+	background:url("@{way-img}/vision/Icon.png") no-repeat center/cover;
+	transform: translatey(-50%);
+}
+
+.title-h2 {
+	.font(92px, 102px, "Montserrat__Regular", @main-color);
+	font-size: 92px/1920px*100vw;
+	margin-left: 120px;
+	z-index: 0;
+}
+
+.title-h2 span {
+	color: @header-bg-text;
+}
+
+.vision__bth {
+	margin: 55px 0px 0px 120px;
+	color: @main-color ;
+	background-color: @vision-color-bg;
+	border: 1px solid #3b3b3b;
+
+}
+
+@media screen and (max-width:999px) {
+	.vision {
+		grid-template-columns: 1fr;
+	}
+
+	.title-h2 {
+		margin-top: 120px;
+		margin-left: 0;
+		align-self: center;
+	}
+
+	.vision__bth {
+		align-self: center;
+		margin: 120px 0px;
+	}
+
+	.vision__col::before {
+		.wh(23.5%, 80%);
+	}
+}
