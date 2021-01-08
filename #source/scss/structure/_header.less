@@ -37,11 +37,11 @@
 
 //==========================================================================
 .header {
-	.pos-r();
+	&:extend(.pos-rel);
 }
 
 .header--bg {
-	.pos-a(4px);
+	.pos-a();
 	.wh(760px/1920px*100vw, 100vh);
 
 	background: @header-bg-text center/cover no-repeat;
@@ -51,7 +51,8 @@
 .header--bg::after {
 	content: "mars";
 	.font(310px/1920px*100vw, 0px, "Montserrat__Bold", @header-bg-text);
-	.pos-a(-2vw, 28%);
+	font-size: 310px/1920px*100vw;
+	.pos-a(-1vw, 28%);
 
 	writing-mode: vertical-lr;
 	text-transform: uppercase;
@@ -79,16 +80,16 @@
 }
 
 //-------------title__logo-------------------
-.title__logo {
-	.pos-r();
-	.font(2.4rem, 30px, "Montserrat__Bold");
+.header__title-logo {
+	&:extend(.pos-rel);
+	.font(24px, 30px, "Montserrat__Bold");
 
 	align-self: center;
 	justify-self: start;
 	border: 1px solid #000;
 }
 
-.title__logo::before {
+.header__title-logo::before {
 	content: "";
 	.pos-a(0, -20%);
 	.wh(15px, 15px);
@@ -99,15 +100,15 @@
 
 //-------------title__logo-------------------
 //-------------text__tel-------------------
-.text__tel {
-	.pos-r();
-	.font(1.4rem, 30px, "Montserrat__Regular", @text-color);
+.tel {
+	&:extend(.pos-rel);
+	.font(14px, 30px, "Montserrat__Regular", @text-color);
 
 	align-self: center;
 	justify-self: start;
 }
 
-.text__tel::before {
+.tel::before {
 	content: "";
 	.pos-a(50%, 100%);
 	.wh(15px, 15px);
@@ -124,9 +125,8 @@
 	grid-column: col-start 11/span 2;
 }
 
-.title__header {
-	.pos-r();
-	.font(1.6rem, 30px, 'Montserrat__Bold', @main-color);
+.header__title {
+	.font(16px, 30px, 'Montserrat__Bold', @main-color);
 	margin: 0 -40px;
 
 	justify-self: end;
@@ -135,7 +135,7 @@
 	transition: border-bottom 1s ease;
 }
 
-.title__header:before {
+.header__title:before {
 	content: "";
 	.pos-a(100%);
 	.wh(100%, 2px);
@@ -145,7 +145,7 @@
 	transition: transform 1s ease;
 }
 
-.title__header:hover:before {
+.header__title:hover:before {
 	content: "";
 	transform: scale(1);
 }
@@ -153,7 +153,7 @@
 //------------------------header__burger-----------------------------
 .header__burger {
 	.wh(24px, 14px);
-	.pos-r();
+	&:extend(.pos-rel);
 
 	cursor: pointer;
 	align-self: center;
@@ -234,11 +234,12 @@
 }
 
 .title {
-	.font(60px/1600px*100vw, 30px, "Montserrat__Bold");
+	.font(60px, 30px, "Montserrat__Bold");
+	font-size: 60px/1600px*100vw;
 }
 
 .text {
-	.font(1.4rem, 2.1em, "Montserrat__Regular", @text-color);
+	.font(14px, 30px, "Montserrat__Regular", @text-color);
 
 }
 
@@ -246,9 +247,8 @@
 	margin-top: 60px;
 }
 
-.text__header {
-	.font(1.8rem, 30px, "Montserrat__Bold");
-
+.header__text {
+	.font(18px, 30px, "Montserrat__Bold");
 	grid-column: col-start 1/span 1;
 	grid-row: col-start 7/span 5;
 	justify-self: center;
@@ -258,7 +258,7 @@
 }
 
 .header__image {
-	.pos-r();
+	&:extend(.pos-rel);
 
 	width: 100%;
 	margin-left: -50px;

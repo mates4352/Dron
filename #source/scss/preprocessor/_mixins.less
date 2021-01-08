@@ -1,7 +1,4 @@
 // main:_preprocessor.less
-.fz(@fz) {
-	font-size: @fz/1600px*100vw;
-}
 
 .wh(@w, @h) {
 	width: @w;
@@ -61,32 +58,56 @@
 	}
 }
 
+//---------------------------------------------------------------------
+.font(@font-size, @line-height, @font-family, @color, @text-align) {
+	line-height: (@line-height/@font-size)*1em;
+	font-size: unit(@font-size/10, rem);
+	font-family: @font-family;
+	color: @color;
+	text-align: @text-align;
+}
 
+.font(@font-size, @line-height, @font-family, @text-align) {
+	line-height: (@line-height/@font-size)*1em;
+	font-size: unit(@font-size/10, rem);
+	font-family: @font-family;
+	text-align: @text-align;
+}
+
+.font(@font-size, @line-height, @text-align) {
+	line-height: (@line-height/@font-size)*1em;
+	font-size: unit(@font-size/10, rem);
+	text-align: @text-align;
+}
+
+//---------------------------------------------------------------------
 .font(@font-size, @line-height, @font-family, @color) {
-	font-size: @font-size;
-	line-height: @line-height;
+	line-height: (@line-height/@font-size)*1em;
+	font-size: unit(@font-size/10, rem);
 	font-family: @font-family;
 	color: @color;
 }
 
 .font(@font-size, @line-height, @font-family) {
-	font-size: @font-size ;
-	line-height: @line-height;
+	line-height: (@line-height/@font-size)*1em;
+	font-size: unit(@font-size/10, rem);
 	font-family: @font-family;
 }
 
 .font(@font-size, @line-height, @color) {
-	font-size: @font-size ;
-	line-height: @line-height;
+	line-height: (@line-height/@font-size)*1em;
+	font-size: unit(@font-size/10, rem);
 	color: @color;
 }
 
 .font(@font-size, @color) {
-	font-size: @font-size ;
+	font-size: unit(@font-size/10, rem);
 	color: @color;
+
 }
 
+//---------------------------------------------------------------------
 .font(@font-size, @line-height) {
-	font-size: @font-size ;
-	line-height: @line-height;
+	line-height: (@line-height/@font-size)*1em;
+	font-size: unit(@font-size/10, rem);
 }
