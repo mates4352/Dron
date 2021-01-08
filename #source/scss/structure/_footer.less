@@ -1,1 +1,24 @@
 // main:_structure.less
+.footer {
+	height: 540px;
+	color: @main-color;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer__title-logo {
+	.font(24px, 30px, "Montserrat__Bold", @sub-main-color);
+	&:extend(.pos-rel);
+}
+
+.footer__title-logo::before {
+	content: "";
+	.pos-a(0, -20%);
+	.wh(15px, 15px);
+	background:url("@{way-img}/header/icon.png") no-repeat center/cover;
+
+}
+
+.text {}

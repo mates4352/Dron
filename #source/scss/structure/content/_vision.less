@@ -1,7 +1,7 @@
 // main:../_content.less
 .vision {
 	display: grid;
-	grid-template-columns: 1fr 1.25fr;
+	grid-template-columns: 1fr 1fr;
 }
 
 .vision__image {
@@ -18,12 +18,16 @@
 .vision__col {
 	&:extend(.pos-rel);
 	background-color: @vision-color-bg;
+
+
+
+}
+
+.block-generation {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-
-
 }
 
 .vision__col::before {
@@ -35,18 +39,18 @@
 	transform: translatey(-50%);
 }
 
-.title-h2 {
+.block-generation__title {
 	.font(92px, 102px, "Montserrat__Regular", @main-color);
 	font-size: 92px/1920px*100vw;
 	margin-left: 120px;
 	z-index: 0;
 }
 
-.title-h2 span {
+.block-generation__title span {
 	color: @header-bg-text;
 }
 
-.vision__bth {
+.block-generation__bth {
 	margin: 55px 0px 0px 120px;
 	color: @main-color ;
 	background-color: @vision-color-bg;
@@ -59,13 +63,13 @@
 		grid-template-columns: 1fr;
 	}
 
-	.title-h2 {
+	.block-generation__title {
 		margin-top: 120px;
 		margin-left: 0;
 		align-self: center;
 	}
 
-	.vision__bth {
+	.block-generation__bth {
 		align-self: center;
 		margin: 120px 0px;
 	}

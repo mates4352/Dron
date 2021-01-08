@@ -1,1 +1,36 @@
-// main:../content.less
+// main:../_content.less
+
+.flying {
+	&:extend(.pos-rel);
+	height: 870px/1180px*100vh;
+}
+
+.flying-bg {
+	background-color: @main-color;
+}
+
+.flying__image {
+	position: absolute;
+	top: 50%;
+	right: -20%;
+	transform: translatey(-50%);
+}
+
+.block-generation {}
+
+.block-generation__title-flying {
+	margin: 0;
+	color: @sub-main-color;
+	text-align-last: left;
+	max-width: 850px;
+}
+
+
+
+.flying__bth {
+	color: @sub-main-color;
+	background-color: @main-color;
+	border: 1px solid #000;
+}
+
+.flying__image {}
