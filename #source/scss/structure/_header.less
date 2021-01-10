@@ -80,22 +80,27 @@
 }
 
 //-------------title__logo-------------------
-.header__title-logo {
-	&:extend(.pos-rel);
-	.font(24px, 30px, "Montserrat__Bold");
+
+.header__logo {
+
 
 	align-self: center;
 	justify-self: start;
 	border: 1px solid #000;
 }
 
-.header__title-logo::before {
+.logo::before {
 	content: "";
-	.pos-a(0, -20%);
+	.pos-a(0, -25%);
 	.wh(15px, 15px);
 
 	background:url("@{way-img}/header/icon.png") no-repeat center/cover;
 
+}
+
+.logo {
+	&:extend(.pos-rel);
+	.font(24px, 30px, "Montserrat__Bold");
 }
 
 //-------------title__logo-------------------
