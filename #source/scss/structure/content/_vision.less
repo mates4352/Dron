@@ -18,8 +18,7 @@
 .vision__col {
 	&:extend(.pos-rel);
 	background-color: @vision-color-bg;
-
-
+	height: 100%;
 
 }
 
@@ -28,6 +27,13 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
+	height: 100%;
+	@media screen and (max-width:999px) {
+		flex-direction: column;
+		height:50vh;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 .vision__col::before {
@@ -41,8 +47,8 @@
 
 .block-generation__title {
 	.font(92px, 102px, "Montserrat__Regular", @main-color);
-	font-size: 92px/1920px*100vw;
 	z-index: 0;
+	
 }
 
 .vision__title {
@@ -61,23 +67,3 @@
 
 }
 
-@media screen and (max-width:999px) {
-	.vision {
-		grid-template-columns: 1fr;
-	}
-
-	.block-generation__title {
-		margin-top: 120px;
-		margin-left: 0;
-		align-self: center;
-	}
-
-	.block-generation__bth {
-		align-self: center;
-		margin: 120px 0px;
-	}
-
-	.vision__col::before {
-		.wh(23.5%, 80%);
-	}
-}

@@ -18,14 +18,25 @@
 .left-block {
 	border: 3px solid rgb(16, 0, 243);
 	background: url("@{way-img}/fly/Circle.png") no-repeat center/cover;
-
 	display: flex;
 	align-items: center;
 }
 
 .right-block {
+	z-index: 1;
+	&:extend(.pos-rel);
 	border: 3px solid rgb(192, 7, 7);
 	background: url("@{way-img}/fly/bg.png") no-repeat center/cover;
+}
+.right-block:before{
+	content: "";
+	background:rgba(0, 0, 0,0.7) no-repeat center/cover;
+	width: 560px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
 
 
@@ -47,52 +58,28 @@
 
 .fly__title-one {
 	line-height: 60px;
+	
 }
 
 .right-block__title {
+	.font(60px,60px,@main-color);
 	margin-left: 90px;
-	line-height: 72px/60px*1em;
-	color: @main-color;
-	max-width: 550px;
+	max-width: 450px;
 }
 
 .bth {
 	.font(18px, 30px, "Montserrat__Bold", @sub-main-color);
-	border-radius: 28.5px/18px*1em;
-	padding: 0 32.66px/18px*1em;
-	height: 60px/18px*1em;
+	@media screen and (max-width:764px) {
+		.font-size-adaptiv(18px,10px,764,320px);
+	}
+	border-radius: 28px/18px*1em;
+	padding: 0 32px/18px*1em;
+	height: round(60px/18px*1em, 1);
 	transition-duration: 1s;
 }
-
 
 .fly__bth {
 	transform: rotate(90deg);
 	margin-right: 190px;
 }
 
-@media screen and(max-width:1279px) {
-	.fly {
-		grid-template-columns: 1fr;
-	}
-
-	.left-block__discription {
-		margin: 0 auto;
-	}
-
-	.right-block__discription {
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	.right-block__title {
-
-		margin-left: 0;
-		text-align: center;
-	}
-
-	.fly__bth {
-		margin-top: 25px;
-		transform: rotate(0deg);
-		margin-right: 0px;
-	}
-}

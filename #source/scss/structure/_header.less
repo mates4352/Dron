@@ -1,39 +1,4 @@
 // main:_structure.less
-//==========================================================================
-.preloader {
-	.wh(100%, 100vh);
-
-	position: fixed;
-	z-index: 999999;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	opacity: 1;
-	background-color: @color;
-	transition: opacity 1s ease;
-}
-
-.preloader:hover {
-	opacity: 0;
-
-}
-
-.preloader__text {
-	.font(150px/1920px*100vw, @whiti);
-	font-weight: 400;
-	animation: neo 5s infinite ease;
-}
-
-@keyframes neo {
-
-	50% {
-		letter-spacing: 40px;
-		font-size: 160px/1920px*100vw;
-		text-shadow: 0px 1px 10px @color1, 0px 0px 30px @color1, 0 0px 100px @color1;
-	}
-}
 
 //==========================================================================
 .header {
@@ -43,23 +8,18 @@
 .header--bg {
 	.pos-a();
 	.wh(760px/1920px*100vw, 100vh);
-
 	background: @header-bg-text center/cover no-repeat;
 	z-index: -1;
+	overflow: hidden;
 }
 
 .header--bg::after {
 	content: "mars";
-	.font(310px, 0px, "Montserrat__Bold", @header-bg-text);
-	font-size: 310px/1920px*100vw;
-	.pos-a(-1vw, 28%);
-
+	.font(450px, 0px, "Montserrat__Bold", @header-bg-text);
+	.pos-a(-3%, 28%);
 	writing-mode: vertical-lr;
 	text-transform: uppercase;
-
 	text-shadow: 0 0 55px/288.36px*1em rgb(187, 2, 2);
-
-
 }
 
 .conteiner();
@@ -67,26 +27,25 @@
 .header__body {
 	height: 100vh;
 	display: grid;
-	grid-template-columns: repeat(12, [col-start] 1fr);
-	grid-template-rows: repeat(12, [col-start] 1fr);
+	grid-template-columns: repeat(3, [col-start] 1fr);
+	grid-template-rows: repeat(3, [col-start] 1fr);
 	gap: 15px 15px;
 }
 
 .header__tel-logo {
+	margin-bottom: 100px;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 9fr;
 	grid-column: col-start 1/span 3;
-	border: 1px solid #000;
+	grid-row: col-start 1/span 1;
 }
 
 //-------------title__logo-------------------
 
 .header__logo {
-
-
+	margin-right: 50px;
 	align-self: center;
 	justify-self: start;
-	border: 1px solid #000;
 }
 
 .logo::before {
@@ -108,7 +67,6 @@
 .tel {
 	&:extend(.pos-rel);
 	.font(14px, 30px, "Montserrat__Regular", @text-color);
-
 	align-self: center;
 	justify-self: start;
 }
@@ -117,7 +75,6 @@
 	content: "";
 	.pos-a(50%, 100%);
 	.wh(15px, 15px);
-
 	transform: translate(-50%, -50%);
 	background: url("@{way-img}/header/Phone.png") no-repeat center/cover;
 
@@ -125,18 +82,18 @@
 
 //-------------text__tel-------------------
 .header__menu {
+	margin-bottom: 100px;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-column: col-start 11/span 2;
+	grid-template-columns:12fr 1fr;
+	grid-column: col-start 1/span 3;
+	grid-row:col-start 1 /span 1;
+	
 }
 
 .header__title {
 	.font(16px, 30px, 'Montserrat__Bold', @main-color);
-	margin: 0 -40px;
-
+	align-self: center;	
 	justify-self: end;
-	align-self: center;
-
 	transition: border-bottom 1s ease;
 }
 
@@ -202,14 +159,14 @@
 //-----------------------header__burger------------------------------
 .header__slider {
 	grid-column: col-start 1/span 1;
-	grid-row: col-start 2/span 5;
-	align-self: end;
-	justify-self: center;
+	grid-row: col-start 2/span 1;
+	align-self: center;
+	justify-self: row;
+	margin-left: 60px
 }
 
 .header__slider-items {
 	.wh(7px, 7px);
-
 	margin-top: 20px;
 	border-radius: 50%;
 	background-color: #e2e0e0;
@@ -230,22 +187,28 @@
 }
 
 .header__description {
+	margin-left: 120px;
 	align-self: center;
 
-	grid-column: col-start 2/span 4;
-	grid-row: col-start 4/span 6;
-
-	padding-right: 60px;
+	grid-column: col-start 1/span 1;
+	grid-row: col-start 2/span 1;
+	
 }
 
 .title {
-	.font(60px, 30px, "Montserrat__Bold");
-	font-size: 60px/1600px*100vw;
+		.font(60px,30px,"Montserrat__Bold");
+		@media screen and(max-width:1600px)  {
+			.font-size-adaptiv(60px,20px,1600,320px);
+		}
+		
 }
 
 .text {
 	.font(14px, 30px, "Montserrat__Regular", @text-color);
-
+	@media screen and(max-width:1600px)  {
+		.font-size-adaptiv(14px,10px,1600,320px);
+	}
+	
 }
 
 .text--m {
@@ -255,8 +218,10 @@
 .header__text {
 	.font(18px, 30px, "Montserrat__Bold");
 	grid-column: col-start 1/span 1;
-	grid-row: col-start 7/span 5;
-	justify-self: center;
+	grid-row: col-start 3/span 1;
+	justify-self: row;
+	margin-left: 40px;
+	align-self: center;
 
 	writing-mode: vertical-rl;
 	transform: rotate(180deg);
@@ -268,9 +233,10 @@
 	width: 100%;
 	margin-left: -50px;
 
-	grid-row: col-start 3/span 8;
-	grid-column: col-start 5/span 8;
+	grid-row: col-start 2/span 1;
+	grid-column: col-start 2/span 2;
 	align-self: center;
+	
 }
 
 .header__image:before {

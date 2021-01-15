@@ -1,0 +1,220 @@
+// main:_structure.less
+
+@media screen and(max-width:1600px) {
+	.block-generation__title{
+		.font-size-adaptiv(92px,65px,1600,999px);
+	}
+}
+@media screen and (max-width:1279px){
+	// ----------header---------------
+	.header__body {
+		height: 100vh;
+		display: grid;
+		grid-template-columns: repeat(3, [col-start] 1fr);
+		grid-template-rows: repeat(2, [col-start] 1fr) [col-start]1fr;
+		gap: 15px 15px;
+	}
+.header--bg {
+	.wh( 100%,720px/1600px*100vh);
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: @header-bg-text center/cover no-repeat;
+	z-index: -1;
+}
+.header--bg::after {
+	content: "mars";
+	.font(330px, 0px, "Montserrat__Bold", @header-bg-text);
+	.pos-a(-30vh,50%);
+	transform: rotate(-90deg);
+	text-shadow: 0 0 55px/288.36px*1em rgb(187, 2, 2);
+}
+.header__image {
+	width: 100%;
+	grid-row: col-start 1/span 3;
+	grid-column: col-start 1/span 3;
+	margin-left: 0;
+	align-self: center;
+	justify-self: center;
+}
+.header__image:before {
+	content: '';
+	.wh(43.958vw, 43.958vw);
+	background-color: @main-color;
+}
+.header__description {
+	margin-left: 0;
+	align-self: center;
+}
+.header__description {
+	align-self: center;
+	text-align: center;
+	grid-column: col-start 2/span 1;
+	grid-row: col-start 3/span 1;
+	
+}
+.header__text {
+	grid-column: col-start 3/span 1;
+	grid-row: col-start 3/span 1;
+	margin-left: 0;
+	justify-self: start;
+	align-self: center;
+	transform: rotate(0deg);
+}
+.header__slider {
+	z-index: 1;
+	grid-column: col-start 3/span 1;
+	grid-row: col-start 2/span 1;
+	align-self: end;
+	justify-self: end;
+	margin-left: 0px
+}
+// ----------fly---------------
+.fly {
+	grid-template-columns: 1fr;
+}
+
+.left-block__discription {
+	margin: 0 auto;
+}
+
+.right-block__discription {
+	flex-direction: column;
+	justify-content: center;
+}
+
+.right-block__title {
+
+	margin-left: 0;
+	text-align: center;
+}
+
+.fly__bth {
+	margin-top: 25px;
+	transform: rotate(0deg);
+	margin-right: 0px;
+}
+}
+
+@media screen and(max-width:999px) {
+	.block-generation__title{
+		.font-size-adaptiv(65px,35px,1600,320px);
+	}
+	.block-generation__title{
+		text-align: center;
+	}
+	.features__row{
+		grid-template-columns: 1fr 1fr;
+	}
+	.block-generation__title {
+		margin-top: 0px;
+		margin-left: 0;
+	}
+
+	.block-generation__bth {
+		align-self: center;
+		margin:50px 0 0 0;
+	}
+
+	.vision__col::before {
+		.wh(23.5%, 80%);
+	}
+	.vision {
+		grid-template-columns: 1fr;
+	}
+	.flying__block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+		border: 1px solid #000;
+		max-width: 800px;
+		padding: 0 20px;
+	}
+	.flying__image {
+		position: absolute;
+		top: 50%;
+		right: 50%;
+		transform: translate(50%,-50%);
+		z-index: 0;
+	}
+	.journey__block {
+		padding-top: 200px;
+	}
+	.header--bg::after {
+		content: "mars";
+		.font(250px, 0px, "Montserrat__Bold", @header-bg-text);
+		.pos-a(-20vh,50%);
+	}
+	.flying__image {
+		width: 100%;
+	}
+}
+
+
+@media screen and(max-width:767px) {
+	.features__row{
+		grid-template-columns: 1fr ;
+	}
+	.features__title-h2 {
+		.font-size-adaptiv(42px,26px,767,320px);
+	}
+	
+	.features__title {
+		.font-size-adaptiv(30px,18px,767,320px);
+	}
+	.header--bg::after {
+		content: "mars";
+		.font(150px, 0px, "Montserrat__Bold", @header-bg-text);
+		.pos-a(-7vh,50%);
+	}
+}
+@media screen and (max-width:499px){
+	
+	.header__tel-logo {
+		margin-bottom: 0px;
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+	.tel {
+		margin-left: 25px;
+		&:extend(.pos-rel);
+		.font(14px, 30px, "Montserrat__Regular", @text-color);
+		align-self: start;
+		justify-self: center;
+	}
+	.header__logo {
+		margin-right: 0px;
+		align-self: center;
+		justify-self: center;
+	}
+	.header__menu {
+		margin-bottom: 50px;
+	}
+	
+	.header__title {
+		justify-self: start;
+	}
+	.header__image {
+		&:extend(.pos-rel);
+	
+		width:150%;
+		margin-left:-50%;
+	
+		grid-row: col-start 2/span 1;
+		grid-column: col-start 2/span 2;
+		align-self: center;
+		
+	}
+	.header__image:before {
+	content: '';
+	.wh(55.958vw, 55.958vw);
+	background-color: @main-color;
+}
+.header--bg::after {
+	content: "mars";
+	.font(100px, 0px, "Montserrat__Bold", @header-bg-text);
+	.pos-a(0vh,50%);
+}
+
+}

@@ -17,9 +17,7 @@ ibg();
 
 
 
-let preloader = document.querySelector('.preloader').onclick = function () {
-	this.style.display = "none"
-}
+
 
 
 function getClass(bth) {
