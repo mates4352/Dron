@@ -3,6 +3,8 @@
 //==========================================================================
 .header {
 	&:extend(.pos-rel);
+	background-color: @main-color;
+	z-index: 0;
 }
 
 .header--bg {
@@ -16,10 +18,10 @@
 .header--bg::after {
 	content: "mars";
 	.font(450px, 0px, "Montserrat__Bold", @header-bg-text);
-	.pos-a(-3%, 28%);
+	.pos-a(-4%, 28%);
 	writing-mode: vertical-lr;
 	text-transform: uppercase;
-	text-shadow: 0 0 55px/288.36px*1em rgb(187, 2, 2);
+	text-shadow: 0 0 round((55px/288.36px)*1em, 1) @header-bg-text-shodow;
 }
 
 .conteiner();
@@ -33,11 +35,11 @@
 }
 
 .header__tel-logo {
-	margin-bottom: 100px;
 	display: grid;
 	grid-template-columns: 1fr 9fr;
 	grid-column: col-start 1/span 3;
 	grid-row: col-start 1/span 1;
+	margin-bottom: 100px;
 }
 
 //-------------title__logo-------------------
@@ -52,14 +54,12 @@
 	content: "";
 	.pos-a(0, -25%);
 	.wh(15px, 15px);
-
 	background:url("@{way-img}/header/icon.png") no-repeat center/cover;
-
 }
 
 .logo {
 	&:extend(.pos-rel);
-	.font(24px, 30px, "Montserrat__Bold");
+	.font(24px, 30px, "Montserrat__Bold", @sub-main-color);
 }
 
 //-------------title__logo-------------------
@@ -82,26 +82,26 @@
 
 //-------------text__tel-------------------
 .header__menu {
-	margin-bottom: 100px;
 	display: grid;
-	grid-template-columns:12fr 1fr;
+	grid-template-columns: 12fr 1fr;
 	grid-column: col-start 1/span 3;
-	grid-row:col-start 1 /span 1;
-	
+	grid-row: col-start 1 /span 1;
+	margin-bottom: 100px;
 }
 
 .header__title {
+	&:extend(.pos-rel);
 	.font(16px, 30px, 'Montserrat__Bold', @main-color);
-	align-self: center;	
+	align-self: center;
 	justify-self: end;
 	transition: border-bottom 1s ease;
+	cursor: pointer;
 }
 
-.header__title:before {
+.header__title::before {
 	content: "";
 	.pos-a(100%);
 	.wh(100%, 2px);
-
 	background-color: @text-color;
 	transform: scale(0);
 	transition: transform 1s ease;
@@ -116,7 +116,6 @@
 .header__burger {
 	.wh(24px, 14px);
 	&:extend(.pos-rel);
-
 	cursor: pointer;
 	align-self: center;
 	justify-self: end;
@@ -128,10 +127,10 @@
 	content: "";
 	.wh(100%, 2px);
 	.pos-a(0, 0);
-
 	background-color: @main-color;
 	transition: transform 1s ease, top 1s ease, box-shadow 1s ease;
-	box-shadow: 0 0 10px @main-color;
+	box-shadow: 0 0 3px @main-color;
+	z-index: 9999;
 }
 
 .header__burger span {
@@ -156,7 +155,45 @@
 	.pos-a(50%, 0)
 }
 
-//-----------------------header__burger------------------------------
+//-----------------------menu------------------------------
+
+.menu {
+	.wh(50vw, 100vh);
+	position: absolute;
+	top: 0;
+	right: 0;
+
+
+	z-index: 1000;
+	background-color: @sub-main-color;
+	transform: translate(120%);
+	transition: transform 1s ease, visibility 1s ease;
+	visibility: hidden;
+	opacity: 0.95;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu.active {
+	visibility: visible;
+	transform: translate(0%);
+}
+
+.menu__link {
+	.font(50px, 110px, "Montserrat__Bold", @main-color);
+	.font-size-adaptiv(50px, 25px, 1600, 360px);
+	-webkit-box-reflect: below -1.4em linear-gradient(transparent, @main-color);
+}
+
+.wrapper.lock {
+	overflow: hidden;
+}
+
+
+//-----------------------menu------------------------------
 .header__slider {
 	grid-column: col-start 1/span 1;
 	grid-row: col-start 2/span 1;
@@ -189,26 +226,26 @@
 .header__description {
 	margin-left: 120px;
 	align-self: center;
-
 	grid-column: col-start 1/span 1;
 	grid-row: col-start 2/span 1;
-	
 }
 
 .title {
-		.font(60px,30px,"Montserrat__Bold");
-		@media screen and(max-width:1600px)  {
-			.font-size-adaptiv(60px,20px,1600,320px);
-		}
-		
+	.font(60px, 30px, "Montserrat__Bold");
+
+	@media screen and(max-width:1600px) {
+		.font-size-adaptiv(60px, 20px, 1600, 320px);
+	}
+
+	color: @sub-main-color;
 }
 
 .text {
 	.font(14px, 30px, "Montserrat__Regular", @text-color);
-	@media screen and(max-width:1600px)  {
-		.font-size-adaptiv(14px,10px,1600,320px);
+
+	@media screen and(max-width:1600px) {
+		.font-size-adaptiv(14px, 12px, 1600, 360px);
 	}
-	
 }
 
 .text--m {
@@ -216,36 +253,31 @@
 }
 
 .header__text {
-	.font(18px, 30px, "Montserrat__Bold");
+	.font(18px, 30px, "Montserrat__Bold", @sub-main-color);
 	grid-column: col-start 1/span 1;
 	grid-row: col-start 3/span 1;
 	justify-self: row;
 	margin-left: 40px;
 	align-self: center;
-
 	writing-mode: vertical-rl;
 	transform: rotate(180deg);
 }
 
 .header__image {
 	&:extend(.pos-rel);
-
 	width: 100%;
 	margin-left: -50px;
-
 	grid-row: col-start 2/span 1;
 	grid-column: col-start 2/span 2;
 	align-self: center;
-	
+
 }
 
 .header__image:before {
 	content: '';
-
 	.wh(33.958vw, 33.958vw);
 	.pos-a(50%, 50%);
 	z-index: -1;
-
 	transform: translate(50%, -50%);
 	border-radius: 50%;
 	background-color: @main-color;
