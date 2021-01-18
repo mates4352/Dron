@@ -231,21 +231,11 @@
 }
 
 .title {
-	.font(60px, 30px, "Montserrat__Bold");
-
-	@media screen and(max-width:1600px) {
-		.font-size-adaptiv(60px, 20px, 1600, 320px);
-	}
-
-	color: @sub-main-color;
+	.font(60px, 30px, "Montserrat__Bold", @sub-main-color);
 }
 
 .text {
 	.font(14px, 30px, "Montserrat__Regular", @text-color);
-
-	@media screen and(max-width:1600px) {
-		.font-size-adaptiv(14px, 12px, 1600, 360px);
-	}
 }
 
 .text--m {

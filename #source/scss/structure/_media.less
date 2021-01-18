@@ -2,6 +2,18 @@
 
 @media screen and(max-width:1600px) {
 
+	// ---------------------header--------------------------------------------
+
+	.title {
+		.font-size-adaptiv(60px, 20px, 1600, 320px);
+	}
+
+	.text {
+		.font-size-adaptiv(14px, 12px, 1600, 360px);
+	}
+
+	// ---------------------header--------------------------------------------
+
 	// ---------------------fly--------------------------------------------
 
 	.block-generation__title {
@@ -19,11 +31,8 @@
 
 	// ---------------------header-----------------------------------------
 	.header__body {
-		height: 100vh;
-		display: grid;
 		grid-template-columns: repeat(3, [col-start] 1fr);
 		grid-template-rows: repeat(2, [col-start] 1fr) [col-start]1fr;
-		gap: 15px 15px;
 	}
 
 	.header--bg {
@@ -31,16 +40,12 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background: @header-bg-text center/cover no-repeat;
-		z-index: -1;
 	}
 
 	.header--bg::after {
-		content: "mars";
 		.font(330px, 0px, "Montserrat__Bold", @header-bg-text);
 		.pos-a(-30vh, 50%);
 		transform: rotate(-90deg);
-		text-shadow: 0 0 55px/288.36px*1em @header-bg-text-shodow;
 	}
 
 	.header__slider {
@@ -54,15 +59,9 @@
 
 	.header__description {
 		margin-left: 0;
-		align-self: center;
-	}
-
-	.header__description {
-		align-self: center;
 		text-align: center;
 		grid-column: col-start 2/span 1;
 		grid-row: col-start 3/span 1;
-
 	}
 
 	.header__text {
@@ -70,23 +69,18 @@
 		grid-row: col-start 3/span 1;
 		margin-left: 0;
 		justify-self: start;
-		align-self: center;
 		transform: rotate(0deg);
 	}
 
 	.header__image {
-		width: 100%;
 		grid-row: col-start 1/span 3;
 		grid-column: col-start 1/span 3;
 		margin-left: 0;
-		align-self: center;
 		justify-self: center;
 	}
 
 	.header__image:before {
-		content: '';
 		.wh(43.958vw, 43.958vw);
-		background-color: @main-color;
 	}
 
 	// ---------------------header-----------------------------------------
@@ -237,20 +231,17 @@
 
 	// ---------------------header-----------------------------------------
 	.header--bg::after {
-		content: "mars";
 		.font(100px, 0px, "Montserrat__Bold", @header-bg-text);
 		.pos-a(0vh, 50%);
 	}
 
 	.header__tel-logo {
 		margin-bottom: 0px;
-		display: grid;
 		grid-template-columns: 1fr;
 	}
 
 	.header__logo {
 		margin-right: 0px;
-		align-self: center;
 		justify-self: center;
 	}
 
@@ -264,28 +255,14 @@
 
 	.tel {
 		margin-left: 25px;
-		&:extend(.pos-rel);
-		.font(14px, 30px, "Montserrat__Regular", @text-color);
-		align-self: start;
-		justify-self: center;
 	}
 
 	.header__image {
-		&:extend(.pos-rel);
-
 		width: 150%;
-		margin-left: -50%;
-
-		grid-row: col-start 2/span 1;
-		grid-column: col-start 2/span 2;
-		align-self: center;
-
 	}
 
 	.header__image:before {
-		content: '';
 		.wh(55.958vw, 55.958vw);
-		background-color: @main-color;
 	}
 
 	// ---------------------header-----------------------------------------
